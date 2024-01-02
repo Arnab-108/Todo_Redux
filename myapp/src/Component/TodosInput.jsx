@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
+import { addTodo } from '../Redux/action'
+import { useDispatch } from 'react-redux'
 
-export const TodosInput = ({addTodo}) => {
+export const TodosInput = () => {
     const [todo,setTodo] = useState("")
-
+    const dispatch = useDispatch()
     const handleAddTodo=()=>{
         console.log(todo)
-        addTodo(todo)
+        dispatch(addTodo(todo))
         setTodo("")
     }
   return (
